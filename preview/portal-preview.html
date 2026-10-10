@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StickS3 天气机 · 配网（预览）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;
+background:linear-gradient(160deg,#16283f,#0b1420);color:#eaf1fb;min-height:100vh;padding:22px 16px 40px}
+h1{font-size:20px;text-align:center;letter-spacing:.03em}
+.sub{text-align:center;color:#8ea6c4;font-size:13px;margin:6px 0 18px}
+.card{background:#1d2f45;border:1px solid #2b405c;border-radius:14px;padding:14px;margin-bottom:14px}
+label{display:block;font-size:13px;color:#9fb4d0;margin:10px 0 6px}
+input{width:100%;padding:12px;border-radius:10px;border:1px solid #33506f;background:#12202f;
+color:#eaf1fb;font-size:15px;outline:none}
+input:focus{border-color:#4ea1ff}
+.ttl{font-size:13px;color:#9fb4d0;margin-bottom:8px}
+.nets{max-height:230px;overflow:auto}
+.net{display:flex;justify-content:space-between;align-items:center;padding:11px 12px;border-radius:10px;
+background:#16283a;margin-bottom:6px;font-size:14px;cursor:pointer}
+.net:active{background:#20384f}
+.net .r{color:#5fb0ff;font-size:12px;letter-spacing:1px}
+.net .lock{color:#8ea6c4;font-size:11px;margin-left:6px}
+button{width:100%;padding:14px;border:none;border-radius:12px;font-size:16px;font-weight:600;
+background:linear-gradient(135deg,#2f80ed,#4ea1ff);color:#fff;margin-top:4px}
+.hint{font-size:12px;color:#7f95b3;text-align:center;margin-top:14px;line-height:1.6}
+.ok{color:#6ee08a;font-size:15px}
+</style></head><body>
+<h1>StickS3 天气机</h1><div class="sub">连接 WiFi 并设置城市</div>
+<form method="POST" action="/save">
+<div class="card">
+<label>WiFi 名称</label>
+<input id="ssid" placeholder="选择下方 WiFi 或手动输入" value="宿舍-WiFi">
+<label>WiFi 密码</label>
+<input type="password" placeholder="没有密码就留空" value="12345678">
+<label>城市（中文，如 北京 / 武汉 / 成都）</label>
+<input placeholder="北京" value="武汉">
+</div>
+<div class="card"><div class="ttl">附近 WiFi（点击选择）</div><div class="nets">
+<div class="net" data-s="宿舍-WiFi" onclick="pick(this)"><span>宿舍-WiFi<span class="lock">🔒</span></span><span class="r">▮▮▮▮</span></div>
+<div class="net" data-s="TP-LINK_5G" onclick="pick(this)"><span>TP-LINK_5G<span class="lock">🔒</span></span><span class="r">▮▮▮</span></div>
+<div class="net" data-s="ChinaNet-a3f2" onclick="pick(this)"><span>ChinaNet-a3f2<span class="lock">🔒</span></span><span class="r">▮▮</span></div>
+<div class="net" data-s="iPhone 的热点" onclick="pick(this)"><span>iPhone 的热点<span class="lock">🔒</span></span><span class="r">▮</span></div>
+<div class="net" data-s="M5Stack-WiFi" onclick="pick(this)"><span>M5Stack-WiFi</span><span class="r">▮</span></div>
+</div></div>
+<button type="submit">保存并连接</button>
+</form>
+<div class="hint">保存后设备会自动连接<br>连接成功屏幕就会显示天气</div>
+<script>function pick(e){document.getElementById('ssid').value=e.dataset.s;
+document.querySelectorAll('.net').forEach(function(x){x.style.outline='none'});
+e.style.outline='2px solid #4ea1ff'}</script>
+</body></html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>配网页 · 最终效果</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:#f6f7f9;
+color:#0f172a;min-height:100vh;padding:24px 18px 34px}
+.topbar{text-align:right;margin-bottom:8px}
+.brand{font-size:11px;letter-spacing:.16em;color:#98a2b3;font-weight:600}
+.lang{font-size:12.5px;color:#98a2b3}
+.lang a{color:#98a2b3;text-decoration:none}
+.lang a.on{color:#0f766e;font-weight:600}
+.hero{text-align:center;margin-bottom:18px}
+h1{font-size:22px;font-weight:650;letter-spacing:-.01em;margin:6px 0 4px}
+.sub{font-size:13px;color:#667085}
+.sec{font-size:11px;letter-spacing:.1em;color:#98a2b3;font-weight:600;margin:18px 0 8px}
+.card{background:#fff;border:1px solid #e6e9ee;border-radius:14px;padding:14px}
+label{display:block;font-size:12.5px;color:#475467;margin:12px 0 6px;font-weight:500}
+label:first-child{margin-top:0}
+input,select{width:100%;padding:11px 12px;border:1px solid #d9dee5;border-radius:10px;background:#fff;
+font-size:15px;color:#0f172a;outline:none}
+.row{display:flex;align-items:center;justify-content:space-between;padding:11px 4px;
+border-bottom:1px solid #eef1f5;border-radius:8px;cursor:pointer}
+.row:last-child{border-bottom:none}
+.row .l{font-size:14px;color:#1d2939}
+.bars{display:flex;gap:2px;align-items:flex-end}
+.bars i{width:3px;background:#cfd4dc;border-radius:1px;display:block}
+.bars i.on{background:#0f766e}
+.b1{height:5px}.b2{height:8px}.b3{height:11px}.b4{height:14px}
+button{width:100%;margin-top:20px;padding:14px;border:none;border-radius:10px;background:#0f766e;
+color:#fff;font-size:15px;font-weight:600;letter-spacing:.01em}
+.foot{font-size:11.5px;color:#98a2b3;text-align:center;margin-top:14px}
+.lock{vertical-align:-1px}
+</style></head><body>
+<div class="topbar"><span class="lang"><a class="on">中文</a> · <a>EN</a></span></div>
+<div class="hero">
+  <div class="brand">STICKS3 · WEATHER</div>
+  <h1>设备配网</h1>
+  <div class="sub">连接 WiFi 并设置城市</div>
+</div>
+
+<div class="sec">WiFi</div>
+<div class="card">
+  <label>网络名称</label>
+  <input value="宿舍-WiFi">
+  <label>密码</label>
+  <input type="password" value="12345678">
+  <label>城市</label>
+  <input value="青岛">
+</div>
+
+<div class="sec">附近网络</div>
+<div class="card">
+  <div class="row"><span class="l">宿舍-WiFi <svg class="lock" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></span>
+    <span class="bars"><i class="b1 on"></i><i class="b2 on"></i><i class="b3 on"></i><i class="b4 on"></i></span></div>
+  <div class="row" style="background:#f0fdfa"><span class="l">TP-LINK_5G <svg class="lock" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></span>
+    <span class="bars"><i class="b1 on"></i><i class="b2 on"></i><i class="b3 on"></i><i class="b4"></i></span></div>
+  <div class="row"><span class="l">M5Stack-WiFi</span>
+    <span class="bars"><i class="b1 on"></i><i class="b2 on"></i><i class="b3"></i><i class="b4"></i></span></div>
+</div>
+
+<div class="sec">显示与数据</div>
+<div class="card">
+  <label>天气数据源</label>
+  <select><option>默认（Open-Meteo）</option><option>自定义接口</option></select>
+</div>
+
+<button>保存并连接</button>
+<div class="foot">StickS3 校园天气机 · v0.1.0</div>
+</body></html>
