@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>gifsheet</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#101318}
+  .grid{display:grid;grid-template-columns:repeat(4,243px)}
+  .cell{width:243px;height:432px;overflow:hidden;position:relative}
+  .scr{width:135px;height:240px;position:absolute;left:0;top:0;transform:scale(1.8);transform-origin:top left;
+       color:#fff;font-size:11px;background:linear-gradient(160deg,#2b5f92,#13273c);overflow:hidden}
+  .scr.land{background:linear-gradient(160deg,#142434,#080e16)}
+  /* --- 通用 --- */
+  .top{display:flex;justify-content:space-between;padding:6px 8px 0;font-weight:600}
+  .top .b{font-weight:400;opacity:.85;font-size:10px}
+  .alert{margin:4px 6px 0;background:#ce3636;border-radius:6px;text-align:center;font-size:10px;padding:4px 0;font-weight:600}
+  .icon{text-align:center;margin-top:6px;font-size:46px;line-height:1.1}
+  .bigtemp{text-align:center;font-size:40px;font-weight:700;letter-spacing:-1px}
+  .bigtemp small{font-size:18px;vertical-align:top}
+  .desc{text-align:center;font-size:13px;font-weight:600;margin-top:-2px}
+  .stats{display:flex;justify-content:space-around;margin-top:8px;font-size:10px}
+  .stats b{display:block;font-size:12px;font-weight:600;margin-top:2px}
+  .tags{display:flex;gap:4px;padding:6px 6px 0}
+  .tag{flex:1;text-align:center;border-radius:6px;padding:4px 0;font-size:9.5px;font-weight:600}
+  .tag.w{background:#3a4e2c;color:#dcefba}.tag.b{background:#28548c;color:#bee2ff}
+  .dots{position:absolute;bottom:5px;left:0;right:0;text-align:center;font-size:7px;color:#5f7ba0}
+  .sec-t{text-align:center;font-size:12px;font-weight:600;padding-top:6px}
+  .days{padding:4px 8px}
+  .dr{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #33475f;padding:5px 0}
+  .dr b{font-size:12px}.dr small{opacity:.6;font-size:8px;font-weight:400;display:block}
+  .dr .t{font-size:12px}.dr .t small{opacity:.55}
+  .card{background:#243c58;border-radius:9px;padding:7px 9px;margin:6px 6px 0}
+  .card.hl{background:#28588c}.card .k{font-size:9px;opacity:.7}
+  .card .v{font-size:15px;font-weight:700;margin-top:2px}
+  .card .d{font-size:9px;opacity:.85;margin-top:3px;line-height:1.35}
+  .tick{position:absolute;bottom:6px;left:0;right:0;text-align:center;font-size:9px;color:#8fa6c4}
+  .bignum{text-align:center;font-size:44px;font-weight:700;margin-top:6px}
+  .cat{text-align:center;font-size:14px;font-weight:600}
+  .pm{display:flex;justify-content:space-between;padding:0 26px;font-size:11px;margin-top:3px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes fall{from{top:-4px}to{top:118px}}
+  .sun{display:inline-block;animation:spin 6s linear infinite}
+</style></head><body>
+<div class="grid">
+
+  <!-- 1 今日 -->
+  <div class="cell"><div class="scr">
+    <div class="top"><span>Auckland</span><span class="b">72%</span></div>
+    <div class="alert">高温预警 37°</div>
+    <div class="icon"><span class="sun">🌤️</span></div>
+    <div class="bigtemp">15<small>°C</small></div>
+    <div class="desc">强阵雨</div>
+    <div class="stats"><div>体感<b>14°</b></div><div>湿度<b>92%</b></div><div>风速 m/s<b>17.7</b></div></div>
+    <div class="tags"><div class="tag w">加件外套</div><div class="tag b">今天要带伞</div></div>
+    <div class="dots">⬤ ⋯⋯⋯</div>
+  </div></div>
+
+  <!-- 2 未来5天 -->
+  <div class="cell"><div class="scr">
+    <div class="top"><span>Auckland</span><span class="b">72%</span></div>
+    <div class="sec-t">未来 5 天</div>
+    <div class="days">
+      <div class="dr"><b>今天<small>10-11</small></b><span>🌤️</span><span class="t">20° <small>/ 15°</small></span></div>
+      <div class="dr"><b>明天<small>10-12</small></b><span>🌧️</span><span class="t">20° <small>/ 16°</small></span></div>
+      <div class="dr"><b>周二<small>10-13</small></b><span>☁️</span><span class="t">21° <small>/ 15°</small></span></div>
+      <div class="dr"><b>周三<small>10-14</small></b><span>🌧️</span><span class="t">20° <small>/ 15°</small></span></div>
+      <div class="dr"><b>周四<small>10-15</small></b><span>🌤️</span><span class="t">17° <small>/ 11°</small></span></div>
+    </div>
+    <div class="dots">⬤ ⋯⋯⋯</div>
+  </div></div>
+
+  <!-- 3 防晒 -->
+  <div class="cell"><div class="scr">
+    <div class="top"><span>Auckland</span><span class="b">72%</span></div>
+    <div class="sec-t">防晒指数</div>
+    <div style="text-align:center;font-size:9px;opacity:.7;margin-top:8px">今日最高 UV</div>
+    <div class="bignum">7</div>
+    <div class="cat">紫外线 强</div>
+    <div style="margin:8px 14px 0;height:8px;border-radius:4px;overflow:hidden;display:flex">
+      <div style="flex:1;background:#6ed782"></div><div style="flex:1;background:#eed05c"></div>
+      <div style="flex:1;background:#f2a248"></div><div style="flex:1;background:#e86868"></div></div>
+    <div style="text-align:center;font-size:9px;margin-top:6px;padding:0 12px">建议 SPF30+，遮阳帽 + 墨镜。</div>
+    <div class="tick">10:00-16:00 紫外线最强 →</div>
+    <div class="dots">⬤ ⋯⋯⋯</div>
+  </div></div>
+
+  <!-- 4 生活提示 -->
+  <div class="cell"><div class="scr">
+    <div class="top"><span>Auckland</span><span class="b">72%</span></div>
+    <div class="sec-t">生活提示</div>
+    <div class="card"><div class="k">穿衣建议</div><div class="v" style="color:#a2d88e">加件外套</div>
+      <div class="d">有点凉，加件外套或夹克，注意保暖。</div></div>
+    <div class="card hl"><div class="k">要带伞吗</div><div class="v" style="color:#96c8ff">今天要带伞</div>
+      <div class="d">今天降水概率 100%，出门带上伞。</div></div>
+    <div class="tick">紫外线 强 · 日出 06:31 · 日落 18:12 →</div>
+    <div class="dots">⬤ ⋯⋯⋯</div>
+  </div></div>
+
+  <!-- 5 趋势 -->
+  <div class="cell"><div class="scr">
+    <div class="top"><span>Auckland</span><span class="b">72%</span></div>
+    <div class="sec-t">未来 24 小时</div>
+    <div style="text-align:center;font-size:9px;opacity:.8;margin-top:4px">最高 20°  最低 15°</div>
+    <svg viewBox="0 0 120 110" width="100%" height="150" style="margin-top:2px">
+      <polyline points="6,52 20,40 34,30 48,26 62,34 76,46 90,54 104,58" fill="none" stroke="#ffbe5a" stroke-width="2.4"/>
+      <g fill="#4f8fd0"><rect x="8" y="86" width="4" height="8"/><rect x="22" y="80" width="4" height="14"/>
+      <rect x="36" y="88" width="4" height="6"/><rect x="50" y="84" width="4" height="10"/>
+      <rect x="64" y="78" width="4" height="16"/><rect x="78" y="82" width="4" height="12"/>
+      <rect x="92" y="88" width="4" height="6"/><rect x="104" y="90" width="4" height="4"/></g>
+      <line x1="6" y1="94" x2="110" y2="94" stroke="#5f7590" stroke-width="1"/></svg>
+    <div class="dots">⬤ ⋯⋯⋯</div>
+  </div></div>
+
+  <!-- 6 空气 -->
+  <div class="cell"><div class="scr">
+    <div class="top"><span>Auckland</span><span class="b">72%</span></div>
+    <div class="sec-t">空气质量</div>
+    <div class="bignum" style="color:#6ed782">25</div>
+    <div class="cat" style="color:#6ed782">优</div>
+    <div style="text-align:center;font-size:9px;opacity:.7;margin-top:6px">美国 AQI 指数</div>
+    <div class="pm"><span>PM2.5</span><span>4</span></div>
+    <div class="pm"><span>PM10</span><span>5</span></div>
+    <div style="font-size:9px;opacity:.85;padding:6px 12px 0">空气很好，适合开窗通风、户外运动。</div>
+    <div class="dots">⬤ ⋯⋯⋯</div>
+  </div></div>
+
+  <!-- 7 洗晒 -->
+  <div class="cell"><div class="scr">
+    <div class="top"><span>Auckland</span><span class="b">72%</span></div>
+    <div class="sec-t">洗晒指数</div>
+    <div class="bignum" style="color:#e26b6b">0</div>
+    <div class="cat" style="color:#e26b6b">不适合</div>
+    <div style="font-size:10px;opacity:.9;padding:8px 12px 0;line-height:1.45">今天有雨 降水概率高 湿度很大</div>
+    <div class="tick">湿度 92% · 风速 17.7 m/s · 降水概率 100% →</div>
+    <div class="dots">⬤ ⋯⋯⋯</div>
+  </div></div>
+
+</div>
+</body></html>

@@ -5,6 +5,10 @@
 
 [English](README.md) · [简体中文]
 
+![demo](docs/images/demo.gif)
+
+8 个界面：
+
 ![预览](docs/images/preview.jpg)
 
 ---

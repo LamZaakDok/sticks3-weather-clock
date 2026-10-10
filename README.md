@@ -5,6 +5,10 @@ Clock with Chinese calendar, 7 weather pages, bilingual (中文 / English), offl
 
 [中文说明](README.zh-CN.md) · [简体中文]
 
+![demo](docs/images/demo.gif)
+
+All 8 screens:
+
 ![preview](docs/images/preview.jpg)
 
 ---
