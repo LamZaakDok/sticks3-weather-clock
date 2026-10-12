@@ -20,7 +20,7 @@ git remote add origin https://github.com/<你的用户名>/sticks3-weather-clock
 git push -u origin main
 ```
 
-然后建 **Release**（`v0.1.0`），把 `release/sticks3-weather-full.bin` 传上去当附件。
+然后建 **Release**（`v1.0.0`），把 `release/sticks3-weather-full.bin` 传上去当附件。
 
 ## 3. 别人怎么刷（写进 README 或 Release 说明）
 

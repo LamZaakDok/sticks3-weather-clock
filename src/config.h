@@ -5,7 +5,7 @@
 // ============================================================
 
 #define FW_NAME     "StickS3 校园天气机"
-#define FW_VERSION  "0.1.0"
+#define FW_VERSION  "1.0.0"
 
 // ---- 配网热点（手机连接这个热点来设置 WiFi / 城市）----
 #define AP_SSID     "StickS3-Weather"
